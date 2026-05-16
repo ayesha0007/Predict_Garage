@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoML Quest - Car Price Prediction</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+
+<!-- ================= LOGIN SCREEN ================= -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <h2>⚡ AutoML Quest</h2>
+    <p>Car Price Prediction Journey</p>
+
+    <div class="audio-toggle" id="audioToggle">
+      <i class="ri-volume-up-fill"></i> Background Music
+    </div>
+
+    <input type="text" id="usernameInput" placeholder="Enter your name" autocomplete="off">
+    <button id="startGameBtn">🚀 Start Mission</button>
+
+    <div id="loginMessage"></div>
+  </div>
+</div>
+
+<!-- ================= MAIN APP ================= -->
+<div class="app" id="app" style="display:none;">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <div class="logo-icon">
+        <i class="ri-ai-generate"></i>
+      </div>
+      <div>
+        <h1>AutoML <span>Quest</span></h1>
+        <p>Car Price Prediction</p>
+      </div>
+    </div>
+
+    <!-- Profile -->
+    <div class="profile-card">
+      <div class="profile-top">
+        <div class="avatar" id="avatarLetter">A</div>
+
+        <div class="profile-info">
+          <h3 id="userNameDisplay">Explorer</h3>
+          <p>Apprentice</p>
+        </div>
+      </div>
+
+      <div class="xp-bar">
+        <div class="xp-fill" id="xpFillBar"></div>
+      </div>
+
+      <div class="xp-text">
+        <span id="xpPoints">0</span> / 1000 XP
+      </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="menu">
+
+      <div class="menu-item active" id="overviewBtn">
+        <i class="ri-home-5-line"></i>
+        <span>Overview</span>
+      </div>
+
+      <div class="menu-title">Missions</div>
+      <div id="levelList"></div>
+
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+
+      <div class="stats">
+
+        <div class="stat-card">
+          <i class="ri-flashlight-fill"></i>
+          <div>
+            <h4>Energy</h4>
+            <p id="energyCount">5</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <i class="ri-diamond-fill"></i>
+          <div>
+            <h4>XP</h4>
+            <p id="xpTotal">0</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <i class="ri-trophy-fill"></i>
+          <div>
+            <h4>Level</h4>
+            <p id="levelNum">1</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Compiler Button -->
+      <div class="compiler-btn" id="openCompilerBtn">
+        <i class="ri-code-line"></i> Python IDE
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- CENTER PANEL -->
+      <div class="center-panel" id="centerPanel">
+
+        <!-- HERO (merged from old UI) -->
+        <section class="hero">
+          <img src="assets/car-bg.jpg" class="hero-car-img" alt="Car Background">
+
+          <div class="hero-overlay">
+
+            <div>
+              <div class="level-tag">LEVEL 1</div>
+
+              <div class="hero-title">
+                Understanding The Mission
+              </div>
+
+              <div class="hero-desc">
+                Learn datasets, features, and target variables before building ML models.
+              </div>
+            </div>
+
+            <div class="quote-box">
+              <p>“Every great model starts with the right data.”</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <div class="tab active">Learn</div>
+          <div class="tab">Example</div>
+          <div class="tab">Key Points</div>
+        </div>
+
+        <!-- Dynamic lesson area -->
+        <div id="lessonContent"></div>
+
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="right-panel" id="rightPanel">
+
+        <div class="widget">
+          <h3>Your Progress</h3>
+          <div class="progress-circle" id="progressCircle">0%</div>
+          <p>Level progress tracking</p>
+        </div>
+
+        <div class="widget">
+          <h3>Current Mission</h3>
+          <div id="missionList"></div>
+        </div>
+
+        <div class="widget">
+          <h3>Badges</h3>
+          <div id="badgeContainer"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<!-- ================= COMPILER MODAL ================= -->
+<div class="compiler-modal" id="compilerModal" style="display:none;">
+  <div class="compiler-container">
+
+    <div class="compiler-header">
+      <h3><i class="ri-terminal-line"></i> Python IDE</h3>
+      <button id="closeCompilerBtn">&times;</button>
+    </div>
+
+    <textarea id="codeEditor" placeholder="Write Python code here..."></textarea>
+
+    <div class="compiler-controls">
+      <button id="runCodeBtn" class="btn-primary">▶ Run</button>
+      <button id="clearCodeBtn" class="btn-secondary">Clear</button>
+    </div>
+
+    <div class="compiler-output" id="compilerOutput">
+      Output will appear here...
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= QUIZ MODAL ================= -->
+<div class="quiz-modal" id="quizModal" style="display:none;">
+  <div class="quiz-container">
+
+    <h2>📝 Quiz</h2>
+
+    <!-- START BUTTON -->
+    <button id="startQuiz" class="btn-primary">
+      Start Quiz
+    </button>
+
+    <div id="quizQuestions"></div>
+
+    <button id="submitQuizBtn" class="btn-primary">Submit</button>
+
+  </div>
+</div>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/compiler.js"></script>
+
+</body>
+</html>
