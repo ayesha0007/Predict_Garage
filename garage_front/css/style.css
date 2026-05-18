@@ -598,7 +598,7 @@ html, body {
 .hero {
     position: relative;
     overflow: hidden;
-    min-height: 250px; /* ইমেজের সাইজ অনুযায়ী */
+    min-height: 250px; 
     background: #0d1117;
     border-radius: 20px;
 }
@@ -607,20 +607,19 @@ html, body {
     position: absolute;
     right: 20px;
     bottom: 10px;
-    width: 350px; /* আপনার স্ক্রিনশট অনুযায়ী সাইজ */
+    width: 350px;
     z-index: 1;
-    filter: drop-shadow(0 0 15px #7c4dff); /* নিওন এফেক্ট */
-}
+    filter: drop-shadow(0 0 15px #7c4dff); 
 
 .hero-overlay {
     position: relative;
-    z-index: 2; /* টেক্সট যেন ইমেজের ওপরে থাকে */
+    z-index: 2; 
 }
 
 /* Tip Section Robot */
 .tip-box {
     position: relative;
-    padding-right: 60px; /* রোবটের জন্য জায়গা রাখা */
+    padding-right: 60px; 
 }
 
 .robot {

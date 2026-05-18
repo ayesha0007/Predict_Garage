@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "garage_back/run.py",
+      "src": "garage_back/app.py",
       "use": "@vercel/python"
     },
     {
@@ -13,7 +13,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "garage_back/run.py"
+      "dest": "garage_back/app.py"
     },
     {
       "src": "/(.*)",

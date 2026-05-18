@@ -1,21 +1,3 @@
-# import subprocess
-# import sys
-# import os
-
-# def main():
-#     print("🚀 Starting AutoML Quest...")
-#     print("Installing dependencies...")
-#     subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "backend/requirements.txt"])
-    
-#     print("\n📊 Starting Flask server on http://localhost:5000")
-#     print("Press Ctrl+C to stop the server\n")
-    
-#     os.chdir("backend")
-#     subprocess.call([sys.executable, "app.py"])
-
-# if __name__ == "__main__":
-#     main()
-
 import subprocess
 import sys
 import os
