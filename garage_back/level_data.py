@@ -301,6 +301,8 @@ Dataset → Preprocessing → ML model → Evaluation → Deployment
 
 Don't jump directly to complex DL models.
 
+⚠️ Warning: Some suggestions may contain incorrect or incomplete code, while others may be correct. Always read the documentation carefully, understand the logic, and review the code properly before copying it into your IDE. Do not blindly copy-paste code without verifying and testing it first.
+
 ---
 """
     
@@ -459,6 +461,9 @@ This dataset will later be used for:
 - Evaluation
 
 👉 So design it carefully, not randomly
+
+
+⚠️ Warning: Some suggestions may contain incorrect or incomplete code, while others may be correct. Always read the documentation carefully, understand the logic, and review the code properly before copying it into your IDE. Do not blindly copy-paste code without verifying and testing it first.
 """
 },
 
@@ -580,6 +585,8 @@ In most ML projects, libraries are imported like this:""",
         df.dropna()
         df.fillna(0)
         df.drop_duplicates()
+
+⚠️ Warning: Some suggestions may contain incorrect or incomplete code, while others may be correct. Always read the documentation carefully, understand the logic, and review the code properly before copying it into your IDE. Do not blindly copy-paste code without verifying and testing it first.
 """
     },
      4: {
@@ -680,6 +687,9 @@ Raw dataset → Clean numeric dataset → ML ready
         scaler = StandardScaler()
         df[["Year", "Price", "Kilometers"]] = scaler.fit_transform(
              df[["Year", "Price", "Kilometers"]])
+
+
+⚠️ Warning: Some suggestions may contain incorrect or incomplete code, while others may be correct. Always read the documentation carefully, understand the logic, and review the code properly before copying it into your IDE. Do not blindly copy-paste code without verifying and testing it first.
 """
 },
        5: {
@@ -846,6 +856,9 @@ df = df[(df["Price"] >= lower) & (df["Price"] <= upper)]
 
 print("Clean dataset shape:", df.shape)
 
+
+⚠️ Warning: Some suggestions may contain incorrect or incomplete code, while others may be correct. Always read the documentation carefully, understand the logic, and review the code properly before copying it into your IDE. Do not blindly copy-paste code without verifying and testing it first.
+
 """},
 
    
@@ -975,6 +988,9 @@ EDA is not about running models — it is about understanding data deeply before
 1. Always explore before training
 2. Visualization is mandatory
 I3. nsights matter more than code execution
+
+
+⚠️ Warning: Some suggestions may contain incorrect or incomplete code, while others may be correct. Always read the documentation carefully, understand the logic, and review the code properly before copying it into your IDE. Do not blindly copy-paste code without verifying and testing it first.
 """},
 
    7: {
@@ -1110,6 +1126,9 @@ rf.fit(X_train, y_train)
 
 xgb = XGBRegressor()
 xgb.fit(X_train, y_train)
+
+
+⚠️ Warning: Some suggestions may contain incorrect or incomplete code, while others may be correct. Always read the documentation carefully, understand the logic, and review the code properly before copying it into your IDE. Do not blindly copy-paste code without verifying and testing it first.
 """},
 
     8: {
