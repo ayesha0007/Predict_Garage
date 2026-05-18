@@ -1,4 +1,7 @@
-const API_BASE = "https://your-app-name.onrender.com/api";
+const API_BASE =
+  window.location.hostname === "localhost"
+    ? "http://localhost:5000/api"
+    : "https://your-app.onrender.com/api";
 window.API_BASE = API_BASE;
 
 let sessionId = null;

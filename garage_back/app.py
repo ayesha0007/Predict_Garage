@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn
 
-from quiz_data import QUIZ_DATA
-from level_data import LEVEL_CONTENT
+from garage_back.quiz_data import QUIZ_DATA
+from garage_back.level_data import LEVEL_CONTENT
 
 
 app = Flask(
