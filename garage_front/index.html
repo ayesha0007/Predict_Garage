@@ -67,7 +67,7 @@
       </div>
 
       <div class="xp-text">
-        <span id="xpPoints">0</span> / 1000 XP
+        <span id="xpPoints">0</span> / 40 XP
       </div>
     </div>
 
@@ -162,6 +162,7 @@
           <div class="tab active">Learn</div>
           <div class="tab">Example</div>
           <div class="tab">Key Points</div>
+          <div class="tab">Suggestions</div>
         </div>
 
         <!-- Dynamic lesson area -->
@@ -195,24 +196,41 @@
   </main>
 </div>
 
-<!-- ================= COMPILER MODAL ================= -->
+<!-- ================= NOTEBOOK PYTHON IDE MODAL ================= -->
 <div class="compiler-modal" id="compilerModal" style="display:none;">
   <div class="compiler-container">
 
+    <!-- HEADER -->
     <div class="compiler-header">
-      <h3><i class="ri-terminal-line"></i> Python IDE</h3>
+      <h3><i class="ri-terminal-line"></i> Python Notebook IDE</h3>
       <button id="closeCompilerBtn">&times;</button>
     </div>
 
-    <textarea id="codeEditor" placeholder="Write Python code here..."></textarea>
-
-    <div class="compiler-controls">
-      <button id="runCodeBtn" class="btn-primary">▶ Run</button>
-      <button id="clearCodeBtn" class="btn-secondary">Clear</button>
+    <!-- TOOLBAR -->
+    <div class="notebook-toolbar">
+      <button id="addBlockBtn" class="btn-secondary">
+        ➕ Add Code Block
+      </button>
+      <button id="clearAllBlocksBtn" class="btn-secondary">
+        🧹 Clear All
+      </button>
     </div>
 
-    <div class="compiler-output" id="compilerOutput">
-      Output will appear here...
+    <!-- NOTEBOOK AREA -->
+    <div id="notebookContainer" class="notebook-container">
+
+      <!-- FIRST DEFAULT BLOCK -->
+      <div class="code-cell">
+        <div class="cell-header">
+          <span>Cell 1</span>
+          <button class="run-cell-btn">▶ Run</button>
+        </div>
+
+        <textarea class="code-editor" placeholder="Write Python code here..."></textarea>
+
+        <div class="output-box"></div>
+      </div>
+
     </div>
 
   </div>
@@ -238,8 +256,9 @@
 
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="js/main.js"></script>
 <script src="js/levels.js"></script>
+<script src="js/main.js"></script>
+
 <script src="js/quiz.js"></script>
 <script src="js/compiler.js"></script>
 
