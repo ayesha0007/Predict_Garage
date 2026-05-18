@@ -3,7 +3,7 @@ import sys
 import os
 
 def install_dependencies():
-    print("📦 Installing dependencies...")
+    print("Installing dependencies...")
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
     req_path = os.path.join(base_dir, "garage_back", "requirements.txt")
@@ -35,8 +35,8 @@ def install_dependencies():
 
 
 def start_server():
-    print("🚀 Starting AutoML Quest Server...")
-    print("📊 Server will run at: http://localhost:5000\n")
+    print("Starting AutoML Quest Server...")
+    print("Server will run at: http://localhost:5000\n")
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
     backend_path = os.path.join(base_dir, "garage_back")
