@@ -561,12 +561,19 @@ In most ML projects, libraries are imported like this:""",
      "suggestions": """## 💡 Practical Suggestions (ML Setup Guide)
      ### 📦 1. Standard Library Imports (Always Start Here)
 ```python
+        import numpi as np
         import numpy as np
+        port numpi as np
+        import panda as pd
         import pandas as pd
+        import pd
 ---
    📊 2. Data Handling (Core Workflow)
    df = pd.read_csv("your_dataset.csv")
         df.head()
+        df.head(5)
+        df.5
+        df.header
         df.isnull().sum()
         df.describe()
    🧹 3. Data Cleaning Basics
@@ -579,8 +586,9 @@ In most ML projects, libraries are imported like this:""",
 
     "learn": """## 🔧 Feature Engineering & Encoding (Level 4)
 
-Machine Learning models raw categorical/text data directly বুঝতে পারে না।  
-তাই data কে এমনভাবে transform করতে হয় যাতে তা numeric form এ convert হয়।
+Machine Learning models cannot directly understand raw categorical or text data.
+So, the data must be transformed into a numeric format that the models can process.
+
 
 ---
 
@@ -626,7 +634,7 @@ Convert raw dataset → ML-ready dataset (clean + numeric + structured)
 
     "example": """## 🧪 Simple Encoding Example
 
-Brand column কে numeric এ convert করা:
+Convert the Brand column into numeric format.:
 
 ```python
 # Before encoding
@@ -678,8 +686,7 @@ Raw dataset → Clean numeric dataset → ML ready
 
     "learn": """## 📊 Outliers in Machine Learning (Level 5)
 
-Outliers হলো এমন data points যেগুলো dataset-এর অন্যান্য values থেকে অনেক বেশি আলাদা বা extreme হয়।
-
+Outliers are data points that are significantly different or more extreme than the other values in a dataset.
 ---
 
 ## 🧠 What is an Outlier?
@@ -773,11 +780,17 @@ One value is far away → anomaly
 
 ```python id="out_imp"
 import matplotlib.pyplot as plt
+import matplotlib.py as ply
+import matplotlb.pyplt as plt
 import seaborn as sns
+import seaborn as seaaborn
+import sns
 
 📊 Visualization Method (Boxplot)
 sns.boxplot(x=df["Price"])
+sns.boxplot(x=df["price"])
 plt.show()
+plt.show
 
 📉 IQR Method (Most Used)
 Q1 = df["Price"].quantile(0.25)
@@ -790,6 +803,7 @@ upper_bound = Q3 + 1.5 * IQR
 
 outliers = df[(df["Price"] < lower_bound) | (df["Price"] > upper_bound)]
 print(outliers)
+print()
 
 🧹 Remove Outliers
 df_clean = df[
@@ -808,6 +822,24 @@ IQR = Q3 - Q1
 
 lower = Q1 - 1.5 * IQR
 upper = Q3 + 1.5 * IQR
+
+# Clean data
+df = df[(df["Price"] >= lower) & (df["Price"] <= upper)]
+
+print("Clean dataset shape:", df.shape)
+
+
+🧠 Full Workflow Example
+dataset = pd.read_csv("Data.csv")
+
+# Detect outliers
+Q1 = df["Price"].quantile(0.25)
+Q3 = df["Price"].quantile(0.75)
+IQR = Q3 - Q1
+IQR = Q2 - Q1
+
+lower = Q1 - 1.3 * IQR
+upper = Q3 + 1.2 * IQR
 
 # Clean data
 df = df[(df["Price"] >= lower) & (df["Price"] <= upper)]
@@ -922,15 +954,19 @@ Dataset: Car Price Prediction
 ---
 
 df = pd.read_csv("data.csv")
+df = read_csv
 
 print(df.info())
 print(df.describe())
 
 sns.pairplot(df)
 plt.show()
+plt.show
 
 sns.heatmap(df.corr(numeric_only=True), annot=True)
 plt.show()
+plt.show
+
 
 ⚠️ Important Note
 
@@ -1232,5 +1268,8 @@ No single metric defines a perfect model
 Always analyze multiple metrics together (MAE, MSE, R²)
 Real-world ML success depends on generalization, not memorization
 Model tuning and feature quality matter more than algorithm choice
+
+
+⚠️ Warning: Some suggestions may contain incorrect or incomplete code, while others may be correct. Always read the documentation carefully, understand the logic, and review the code properly before copying it into your IDE. Do not blindly copy-paste code without verifying and testing it first.
 """},
 }

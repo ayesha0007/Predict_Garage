@@ -9,6 +9,7 @@ function loadOverview(currentUser, currentLevel) {
     <div class="lesson-card">
       <h2>🎯 Overview</h2>
       <p>Welcome ${currentUser.username}! Start your learning journey step by step.</p>
+      <p>⚠️ Warning: Some suggestions may contain incorrect or incomplete code, while others may be correct. Always read the documentation carefully, understand the logic, and review the code properly before copying it into your IDE. Do not blindly copy-paste code without verifying and testing it first.</p>
       
       <div style="margin: 20px 0; padding: 15px; background: #1e293b; border-radius: 10px;">
         <h3>📊 Your Stats</h3>
